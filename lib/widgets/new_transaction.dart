@@ -7,16 +7,43 @@ import 'package:intl/intl.dart';
 
 class NewTrasaction extends StatefulWidget {
   final Function addNewTransaction;
-  NewTrasaction(this.addNewTransaction);
+  NewTrasaction(this.addNewTransaction) {
+    print("Constructor  Newtransactor Widget");
+  }
 
   @override
-  _NewTrasactionState createState() => _NewTrasactionState();
+  _NewTrasactionState createState() {
+    print("create state  Newtransactor Widget");
+    return _NewTrasactionState();
+  }
 }
 
 class _NewTrasactionState extends State<NewTrasaction> {
   final _titleController = TextEditingController();
   final _amountController = TextEditingController();
   DateTime _selectedDate;
+
+  _NewTrasactionState() {
+    print("Constructor  Newtransactor State");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print("initState  Newtransactor State");
+  }
+
+  @override
+  void didUpdateWidget(covariant NewTrasaction oldWidget) {
+    print('did update widge');
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    print("Dispose  Newtransactor State");
+    super.dispose();
+  }
 
   void _submitData() {
     final enteredTitle = _titleController.text;
